@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shell and Soil Farms | Live snails in Port Harcourt</title>
+<meta name="description" content="Shell and Soil Farms is a small, new snail farm in Port Harcourt, Rivers State. Message us on WhatsApp to ask what live snails are available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --moss: #2f4a2b;
+    --leaf: #4f7a3a;
+    --sage: #e6ebd9;
+    --bark: #4a3626;
+    --clay: #a8683a;
+    --soil: #f3efe4;
+    --ink: #22281e;
+    --wa: #1f8a4c;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--soil);
+    padding-bottom: 5rem;
+  }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 .6em; color: var(--moss); }
+  h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); font-weight: 700; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); font-weight: 700; }
+  h3 { font-size: 1.2rem; font-weight: 500; }
+  p { margin: 0 0 1em; max-width: 62ch; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
+
+  .wrap { width: min(100% - 2.5rem, 62rem); margin-inline: auto; }
+  section { padding: 3.5rem 0; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+    min-height: 3.25rem; padding: .85rem 1.6rem;
+    background: var(--wa); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 1.05rem; border-radius: 999px;
+    box-shadow: 0 3px 0 #145c33;
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover { transform: translateY(1px); box-shadow: 0 2px 0 #145c33; }
+  .btn:active { transform: translateY(3px); box-shadow: none; }
+  .btn svg { width: 1.4rem; height: 1.4rem; fill: currentColor; flex: none; }
+
+  /* Hero */
+  .hero { background: var(--moss); color: #eef2e4; padding: 2.5rem 0 3.5rem; overflow: hidden; }
+  .hero h1 { color: #f6f3e8; }
+  .hero .lede { font-size: 1.2rem; color: #d6dfc6; }
+  .hero .note { font-size: .95rem; color: #b9c7a6; margin-top: 1rem; }
+  .brand { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: #f6f3e8; margin-bottom: 2.5rem; }
+  .hero-grid { display: grid; gap: 2rem; }
+  .shell { width: min(70%, 15rem); margin: .5rem auto 0; display: block; }
+  .shell path { fill: none; stroke: #9bbf7a; stroke-width: 5; stroke-linecap: round; }
+  .shell .ground { stroke: #7a5a3c; stroke-width: 6; }
+  .shell .body { stroke: #c9a27a; }
+  @media (prefers-reduced-motion: no-preference) {
+    .shell .spiral { stroke-dasharray: var(--len, 1200); stroke-dashoffset: var(--len, 1200); animation: draw 2.4s ease-out .2s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  }
+
+  /* About */
+  .about { background: var(--soil); }
+  .honest {
+    border-left: 5px solid var(--clay);
+    background: #fff;
+    padding: 1.1rem 1.25rem;
+    border-radius: 0 .5rem .5rem 0;
+    margin: 1.5rem 0;
+  }
+  .honest p { margin: 0; }
+
+  .photo {
+    display: grid; place-items: center; text-align: center;
+    min-height: 11rem; padding: 1rem;
+    border: 2px dashed var(--leaf);
+    background: var(--sage);
+    border-radius: .5rem;
+    color: var(--moss); font-size: .95rem;
+  }
+  .photo.tall { min-height: 15rem; }
+
+  /* Offer */
+  .offer { background: var(--sage); }
+  .offer-grid { display: grid; gap: 1.5rem; }
+  .offer-card { background: #fff; border-radius: .5rem; padding: 1.5rem; border-top: 6px solid var(--leaf); }
+
+  /* Steps */
+  .steps { list-style: none; counter-reset: s; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1.25rem; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; align-items: start; }
+  .steps li::before {
+    content: counter(s);
+    display: grid; place-items: center;
+    width: 2.75rem; height: 2.75rem; border-radius: 50%;
+    background: var(--bark); color: #f6f3e8;
+    font-family: var(--serif); font-weight: 700; font-size: 1.2rem;
+  }
+  .steps h3 { margin: .15rem 0 .2rem; }
+  .steps p { margin: 0; }
+
+  /* Contact */
+  .contact { background: var(--bark); color: #efe6d8; text-align: center; }
+  .contact h2 { color: #f6f3e8; }
+  .contact p { margin-inline: auto; }
+  .contact .btn { margin-top: .5rem; }
+
+  footer { padding: 1.5rem 0 2rem; font-size: .9rem; color: #5a5f50; text-align: center; }
+
+  /* Sticky mobile button */
+  .sticky {
+    position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 10;
+    display: flex; justify-content: center;
+  }
+  .sticky .btn { width: 100%; max-width: 26rem; box-shadow: 0 6px 18px rgba(0,0,0,.28), 0 3px 0 #145c33; }
+
+  @media (min-width: 48rem) {
+    body { padding-bottom: 0; }
+    section { padding: 5rem 0; }
+    .hero-grid { grid-template-columns: 1.3fr 1fr; align-items: center; gap: 3rem; }
+    .shell { width: 100%; max-width: 17rem; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    .offer-grid { grid-template-columns: 1fr 1fr; }
+    .sticky { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">Shell and Soil Farms</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Live snails, raised small in Port Harcourt.</h1>
+        <p class="lede">We are a new, beginner snail farm in Rivers State. We start small, we keep it honest, and we sell live snails to people who ask.</p>
+        <a class="btn" href="[WHATSAPP LINK]" aria-label="Chat with us on WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.9.92-3-.2-.31A8.2 8.2 0 1 1 12.04 20.1Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+          Ask on WhatsApp
+        </a>
+        <p class="note">Based in Port Harcourt, Rivers State, Nigeria.</p>
+      </div>
+      <svg class="shell" viewBox="0 0 200 200" role="img" aria-label="Drawing of a snail shell spiral">
+        <path class="ground" d="M10 170 H190"/>
+        <path class="body" d="M30 170 C60 150 150 150 185 170"/>
+        <path class="spiral" id="spiral" d=""/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>About the farm</h2>
+        <p>Shell and Soil Farms is a small snail farm in Port Harcourt. We keep a limited number of snails and we are growing step by step.</p>
+        <div class="honest">
+          <p><strong>We are beginners.</strong> This is a new farm and we are still learning. We will not claim experience we do not have. If you have questions about the snails, ask us, and we will answer plainly.</p>
+        </div>
+        <p>Because we are small, we do not always have snails ready. We would rather tell you that than promise what we cannot supply.</p>
+      </div>
+      <div class="photo tall" role="img" aria-label="Photo placeholder">Photo placeholder: the farm or snail pens</div>
+    </div>
+  </section>
+
+  <section class="offer" id="offer">
+    <div class="wrap">
+      <h2>What we offer</h2>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <h3>Live snails</h3>
+          <p>We sell live snails. Stock changes, so availability is not listed here. Message us on WhatsApp and ask what we have now.</p>
+          <a class="btn" href="[WHATSAPP LINK]">Ask about availability</a>
+        </div>
+        <div class="photo" role="img" aria-label="Photo placeholder">Photo placeholder: live snails</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <h2>How to order</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Message us on WhatsApp</h3>
+            <p>Tap the button and say hello. Tell us you would like live snails.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Tell us what you need</h3>
+            <p>Let us know how many you want and when you need them.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>We confirm what we have</h3>
+            <p>We will tell you honestly if we can supply your order, and give you the price and next steps.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Ready to ask?</h2>
+      <p>The quickest way to reach us is WhatsApp. Send a message and we will reply as soon as we can.</p>
+      <a class="btn" href="[WHATSAPP LINK]">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.9.92-3-.2-.31A8.2 8.2 0 1 1 12.04 20.1Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Shell and Soil Farms &middot; Port Harcourt, Rivers State, Nigeria</div>
+</footer>
+
+<div class="sticky">
+  <a class="btn" href="[WHATSAPP LINK]">Chat on WhatsApp</a>
+</div>
+
+<script>
+  // Draw the snail shell spiral
+  (function () {
+    var pts = [], a = 2, b = 0.2, cx = 100, cy = 110;
+    for (var t = 0; t <= 6 * Math.PI; t += 0.15) {
+      var r = a * Math.exp(b * t);
+      pts.push((cx + r * Math.cos(t)).toFixed(1) + " " + (cy + r * Math.sin(t) * -1).toFixed(1));
+    }
+    var el = document.getElementById("spiral");
+    el.setAttribute("d", "M" + pts.join(" L"));
+    try { el.style.setProperty("--len", Math.ceil(el.getTotalLength()) + 20); } catch (e) {}
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
